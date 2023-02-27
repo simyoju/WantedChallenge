@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		48F94AA329ACE2420054008D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F94AA229ACE2420054008D /* AppDelegate.swift */; };
 		48F94AA529ACE2420054008D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F94AA429ACE2420054008D /* SceneDelegate.swift */; };
-		48F94AA729ACE2420054008D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F94AA629ACE2420054008D /* ViewController.swift */; };
+		48F94AA729ACE2420054008D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F94AA629ACE2420054008D /* MainViewController.swift */; };
 		48F94AAC29ACE2440054008D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48F94AAB29ACE2440054008D /* Assets.xcassets */; };
 		48F94AAF29ACE2440054008D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48F94AAD29ACE2440054008D /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -18,7 +18,7 @@
 		48F94A9F29ACE2420054008D /* WantedChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WantedChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48F94AA229ACE2420054008D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48F94AA429ACE2420054008D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		48F94AA629ACE2420054008D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		48F94AA629ACE2420054008D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		48F94AAB29ACE2440054008D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48F94AAE29ACE2440054008D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48F94AB029ACE2440054008D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,7 +56,7 @@
 			children = (
 				48F94AA229ACE2420054008D /* AppDelegate.swift */,
 				48F94AA429ACE2420054008D /* SceneDelegate.swift */,
-				48F94AA629ACE2420054008D /* ViewController.swift */,
+				48F94AA629ACE2420054008D /* MainViewController.swift */,
 				48F94AAB29ACE2440054008D /* Assets.xcassets */,
 				48F94AAD29ACE2440054008D /* LaunchScreen.storyboard */,
 				48F94AB029ACE2440054008D /* Info.plist */,
@@ -134,7 +134,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48F94AA729ACE2420054008D /* ViewController.swift in Sources */,
+				48F94AA729ACE2420054008D /* MainViewController.swift in Sources */,
 				48F94AA329ACE2420054008D /* AppDelegate.swift in Sources */,
 				48F94AA529ACE2420054008D /* SceneDelegate.swift in Sources */,
 			);
@@ -280,7 +280,7 @@
 				INFOPLIST_FILE = WantedChallenge/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -292,7 +292,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -308,7 +308,7 @@
 				INFOPLIST_FILE = WantedChallenge/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -320,7 +320,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
