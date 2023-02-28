@@ -12,11 +12,18 @@ import Then
 
 class MainViewController: UIViewController {
     // MARK: - UI
-    let firstImageView = UIImageView().then {
+    private let firstImageView = UIImageView().then {
         $0.image = UIImage(systemName: "photo")
     }
     
-//    let firstProgressBar = 
+    private let firstProgressView = UIProgressView().then {
+        $0.progress = 0.5
+    }
+    
+    private let firstButton = UIButton().then {
+        $0.setTitle("Load", for: .normal)
+        $0.backgroundColor = .link
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,10 +34,10 @@ class MainViewController: UIViewController {
     }
 }
 
-extension MainViewController {
+private extension MainViewController {
     func setupView(){
         [
-            firstImageView
+            firstImageView, firstProgressView, firstButton
         ].forEach{
             view.addSubview($0)
         }
@@ -47,6 +54,20 @@ extension MainViewController {
                 .offset(24)
             $0.width.equalTo(imageViewWidth)
             $0.height.equalTo(imageViewWidth * 0.75)
+        }
+        
+        firstProgressView.snp.makeConstraints{
+            $0.centerY.equalTo(firstImageView)
+            $0.leading.equalTo(firstImageView.snp.trailing)
+                .offset(8)
+            $0.width.equalTo(imageViewWidth)
+        }
+        
+        firstButton.snp.makeConstraints {
+            $0.centerY.equalTo(firstImageView)
+            $0.leading.equalTo(firstProgressView.snp.trailing)
+            $0.width.equalTo(imageViewWidth)
+            $0.height.equalTo(imageViewWidth * 0.5)
         }
     }
 }
