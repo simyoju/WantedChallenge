@@ -9,6 +9,8 @@ import UIKit
 
 import SnapKit
 import Then
+import Kingfisher
+
 import Moya
 import RxSwift
 import RxCocoa
@@ -243,6 +245,103 @@ private extension MainViewController {
             $0.width.height.equalTo(firstButton)
         }
     }
+    
+    func setupBinding(){
+        firstButton.rx.tap
+            .asDriver()
+            .drive(onNext: { [weak self] in
+                guard let self = self else { return }
+                self.setupImage(imageView: self.firstImageView)
+            })
+            .disposed(by: disposeBag)
+        
+        secondButton.rx.tap
+            .asDriver()
+            .drive(onNext: { [weak self] in
+                guard let self = self else { return }
+                self.setupImage(imageView: self.secondImageView)
+            })
+            .disposed(by: disposeBag)
+        
+        thirdButton.rx.tap
+            .asDriver()
+            .drive(onNext: { [weak self] in
+                guard let self = self else { return }
+                self.setupImage(imageView: self.thirdImageView)
+            })
+            .disposed(by: disposeBag)
+        
+        fourthButton.rx.tap
+            .asDriver()
+            .drive(onNext: { [weak self] in
+                guard let self = self else { return }
+                self.setupImage(imageView: self.fourthImageView)
+            })
+            .disposed(by: disposeBag)
+        
+        fifthButton.rx.tap
+            .asDriver()
+            .drive(onNext: { [weak self] in
+                guard let self = self else { return }
+                self.setupImage(imageView: self.fifthImageView)
+            })
+            .disposed(by: disposeBag)
+        
+        bottomButton.rx.tap
+            .asDriver()
+            .drive(onNext: { [weak self] in
+                guard let self = self else { return }
+                self.setupImages()
+            })
+            .disposed(by: disposeBag)
+    }
+    
+}
+
+extension MainViewController {
+    func setupImage(imageView: UIImageView){
+        self.getImage(page: 1, limit: 5)
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { arr in
+                var url: URL?
+                switch imageView {
+                case self.firstImageView:
+                    url = URL(string: arr[0])!
+                case self.secondImageView:
+                    url = URL(string: arr[1])!
+                case self.thirdImageView:
+                    url = URL(string: arr[2])!
+                case self.fourthImageView:
+                    url = URL(string: arr[3])!
+                case self.fifthImageView:
+                    url = URL(string: arr[4])!
+                default:
+                    break
+                }
+                self.setupImageView(imageView: imageView, url: url!)
+            })
+            .disposed(by: self.disposeBag)
+    }
+    
+    func setupImages(){
+        self.getImage(page: 1, limit: 5)
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { arr in
+                let imageViews = [self.firstImageView, self.secondImageView, self.thirdImageView, self.fourthImageView, self.fifthImageView]
+                for i in 0..<5 {
+                    let url = URL(string: arr[i])!
+                    self.setupImageView(imageView: imageViews[i], url:url)
+                }
+            })
+            .disposed(by: self.disposeBag)
+    }
+    
+    func setupImageView(imageView: UIImageView, url: URL){
+        imageView.kf.indicatorType = .activity
+        imageView.kf.setImage(with: url)
+    }
+}
+
 extension MainViewController {
     func getImage(page: Int, limit: Int) -> Observable<[String]> {
         KingfisherManager.shared.cache.clearCache()
