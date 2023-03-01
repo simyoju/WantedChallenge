@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -77,7 +77,6 @@
 				DFDC30EC4BB1A31F40E82908 /* Pods-WantedChallenge.debug.xcconfig */,
 				F14184668BD6F8828A774C81 /* Pods-WantedChallenge.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -127,7 +126,7 @@
 				};
 			};
 			buildConfigurationList = 48F94A9A29ACE2420054008D /* Build configuration list for PBXProject "WantedChallenge" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (

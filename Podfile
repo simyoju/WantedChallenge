@@ -1,4 +1,4 @@
-# Uncomment the next line to define a global platform for your project
+# Uncomment the next line to define a global platform for your projecti
 # platform :ios, '9.0'
 
 target 'WantedChallenge' do
@@ -8,4 +8,6 @@ target 'WantedChallenge' do
   # Pods for WantedChallenge
   pod 'SnapKit', '~> 5.6.0'
   pod 'Then'
+  pod 'Moya', '~> 15.0'
+
 end
