@@ -1,30 +1,52 @@
 PODS:
   - Alamofire (5.6.4)
+  - Kingfisher (7.6.2)
   - Moya (15.0.0):
     - Moya/Core (= 15.0.0)
   - Moya/Core (15.0.0):
     - Alamofire (~> 5.0)
+  - RxCocoa (6.5.0):
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - RxRelay (6.5.0):
+    - RxSwift (= 6.5.0)
+  - RxSwift (6.5.0)
   - SnapKit (5.6.0)
+  - SwiftyJSON (4.3.0)
   - Then (3.0.0)
 
 DEPENDENCIES:
+  - Kingfisher (~> 7.0)
   - Moya (~> 15.0)
+  - RxCocoa (= 6.5.0)
+  - RxSwift (= 6.5.0)
   - SnapKit (~> 5.6.0)
+  - SwiftyJSON (~> 4.0)
   - Then
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Kingfisher
     - Moya
+    - RxCocoa
+    - RxRelay
+    - RxSwift
     - SnapKit
+    - SwiftyJSON
     - Then
 
 SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
+  Kingfisher: 6c5449c6450c5239166510ba04afe374a98afc4f
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
+  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
 
-PODFILE CHECKSUM: cb7d4714b018b520a3822674bbf7988aba94e4df
+PODFILE CHECKSUM: f27fd2f2d826d62c6ad1951eb40a4a371be7a958
 
 COCOAPODS: 1.11.3
