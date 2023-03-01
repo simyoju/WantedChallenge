@@ -9,6 +9,10 @@ import UIKit
 
 import SnapKit
 import Then
+import Moya
+import RxSwift
+import RxCocoa
+import SwiftyJSON
 
 class MainViewController: UIViewController {
     // MARK: - UI
@@ -24,6 +28,10 @@ class MainViewController: UIViewController {
         $0.setTitle("Load", for: .normal)
         $0.backgroundColor = .link
     }
+    // MARK: - properties
+    let provider = MoyaProvider<ImageAPI>()
+    
+    private lazy var disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +76,33 @@ private extension MainViewController {
             $0.leading.equalTo(firstProgressView.snp.trailing)
             $0.width.equalTo(imageViewWidth)
             $0.height.equalTo(imageViewWidth * 0.5)
+extension MainViewController {
+    func getImage(page: Int, limit: Int) -> Observable<[String]> {
+        KingfisherManager.shared.cache.clearCache()
+        
+        return Observable.create { emitter in
+            self.provider.request(.randomImages(
+                page: page,
+                limit: limit)) { result in
+                    var urls: [String] = []
+                    switch result {
+                    case .success(let response):
+                        let json = JSON(response.data)
+                        print("🔫 json: \(json)")
+                        print("### json[limit] -> \(json[limit-1])")
+                        
+                        for data in json.arrayValue {
+                            print("### data -> \(data["download_url"].stringValue)")
+                            urls.append(data["download_url"].stringValue)
+                        }
+                        
+                        emitter.onNext(urls)
+                        emitter.onCompleted()
+                    case .failure(let err):
+                        print("error 발생 -> \(err.localizedDescription)")
+                    }
+            }
+            return Disposables.create{}
         }
     }
 }

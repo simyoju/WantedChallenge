@@ -13,6 +13,7 @@
 		48F94AAC29ACE2440054008D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48F94AAB29ACE2440054008D /* Assets.xcassets */; };
 		48F94AAF29ACE2440054008D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48F94AAD29ACE2440054008D /* LaunchScreen.storyboard */; };
 		BD345A4D3F84E23D32F4A770 /* Pods_WantedChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E99B8E8A43BEB968D1F608BA /* Pods_WantedChallenge.framework */; };
+		CF57D38429AFAD1100270CBA /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF57D38329AFAD1100270CBA /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		48F94AAB29ACE2440054008D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48F94AAE29ACE2440054008D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48F94AB029ACE2440054008D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF57D38329AFAD1100270CBA /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		DFDC30EC4BB1A31F40E82908 /* Pods-WantedChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WantedChallenge.debug.xcconfig"; path = "Target Support Files/Pods-WantedChallenge/Pods-WantedChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		E99B8E8A43BEB968D1F608BA /* Pods_WantedChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WantedChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F14184668BD6F8828A774C81 /* Pods-WantedChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WantedChallenge.release.xcconfig"; path = "Target Support Files/Pods-WantedChallenge/Pods-WantedChallenge.release.xcconfig"; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				48F94AA229ACE2420054008D /* AppDelegate.swift */,
 				48F94AA429ACE2420054008D /* SceneDelegate.swift */,
 				48F94AA629ACE2420054008D /* MainViewController.swift */,
+				CF57D38329AFAD1100270CBA /* NetworkManager.swift */,
 				48F94AAB29ACE2440054008D /* Assets.xcassets */,
 				48F94AAD29ACE2440054008D /* LaunchScreen.storyboard */,
 				48F94AB029ACE2440054008D /* Info.plist */,
@@ -202,6 +205,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF57D38429AFAD1100270CBA /* NetworkManager.swift in Sources */,
 				48F94AA729ACE2420054008D /* MainViewController.swift in Sources */,
 				48F94AA329ACE2420054008D /* AppDelegate.swift in Sources */,
 				48F94AA529ACE2420054008D /* SceneDelegate.swift in Sources */,
