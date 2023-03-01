@@ -19,9 +19,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         
-        let mainViewController = MainViewController()
+        window?.rootViewController = UIStoryboard(name: "LaunchScreen", bundle: nil).instantiateInitialViewController()
         
-        window?.rootViewController = mainViewController
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.4) {
+            let mainViewController = MainViewController()
+            self.window?.rootViewController = mainViewController
+        }
+        
         window?.makeKeyAndVisible()
     }
 
